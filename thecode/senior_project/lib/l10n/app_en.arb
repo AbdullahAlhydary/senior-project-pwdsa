@@ -1,0 +1,73 @@
+{
+  "@@locale": "en",
+  "secondWelcomeMessage": "Welcome, {name}!",
+  "@secondWelcomeMessage": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "correctIDMessage": "Please enter a valid employee ID",
+  "correctPasswordMessage": "Please enter a valid password",
+  "id": "Employee ID",
+  "password": "Password",
+  "firstWelcomeMessage": "Welcome to the Water Analyzer app!",
+  "loginRequestMessage": "Please log in to continue",
+  "loginNote": "NOTE: if you don't have an account or forgot your password, please contact your administrator",
+  "login": "Log in",
+  "dashboard": "Dashboard",
+  "results": "Results",
+  "reports": "Reports",
+  "settings": "Settings",
+  "provideData": "Please provide the required data to view results",
+  "viewResults": "View Results",
+  "emptyValueMessage": "Make sure to enter a value in the field",
+  "nonNumricalMessage": "Make sure to enter a numrical value only",
+  "invalidIDLengthMessage": "Employee ID must be exactly 10 characters",
+  "invalidIDFormatMessage": "Field must contain only letters and/or numbers",
+  "invalidIDMessage": "Employee ID must be exactly 10 characters and contain only letters and/or numbers",
+  "invalidPasswordLengthMessage": "Password must be at least 8 characters",
+  "invalidPasswordFormatMessage": "Password must contain at least one uppercase letter, one lowercase letter, and one number",
+  "greaterThanZeroValidationMessage": "Value of this field must be greater than 0",
+  "positiveNumberValidationMessage": "Value of this field must be positive",
+  "pressureValidationMessage": "Value of this field cannot exceed MAIP",
+  "valueBetweenValidationMessage": "Value of this field must be between {firstNumber} and {secondNumber}",
+  "@valueBetweenValidationMessage": {
+    "placeholders": {
+      "firstNumber": {},
+      "secondNumber": {}
+    }
+  },
+  "decisionResult": "{decision}",
+  "@decisionResult": {
+    "placeholders": {
+      "decision": {}
+    }
+  },
+  "showResults": "Show Results",
+  "probabilities": "Probabilities",
+  "lowRisk": "Low Risk",
+  "moderateRisk": "Medium Risk",
+  "highRisk": "High Risk",
+  "logout": "Logout",
+  "predicting": "Analyzing sample…",
+  "predictionFailed": "Prediction failed: {error}",
+  "@predictionFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "confidence": "Confidence",
+  "recommendedDecision": "Recommended Decision",
+  "modelInfo": "Model: {name}",
+  "@modelInfo": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "formationProperties": "Formation & Fluid Properties",
+  "lithology": "Lithology",
+  "lithologyCarbonate": "Carbonate",
+  "lithologySandstone": "Sandstone",
+  "lithologyShale": "Shale",
+  "selectValue": "Please select a value"
+}

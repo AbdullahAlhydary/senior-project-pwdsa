@@ -1,0 +1,63 @@
+# ---------- Secrets ----------
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+
+# ---------- Python / backend ----------
+**/__pycache__/
+*.py[cod]
+*$py.class
+**/.venv/
+**/venv/
+**/env/
+**/.pip-cache/
+**/.mypy_cache/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+**/.ruff_cache/
+backend/.expo-export/
+
+# ---------- Node / Expo (mobile) ----------
+**/node_modules/
+**/.expo/
+**/.expo-shared/
+**/.expo-export/
+**/dist/
+**/web-build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------- Flutter (legacy app in thecode/) ----------
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/generated_plugin_registrant.dart
+thecode/**/build/
+thecode/**/ios/Pods/
+thecode/**/ios/Flutter/Flutter.framework
+thecode/**/ios/Flutter/Flutter.podspec
+thecode/**/android/.gradle/
+thecode/**/android/app/build/
+thecode/**/android/build/
+thecode/**/macos/Pods/
+thecode/**/windows/flutter/ephemeral/
+thecode/**/linux/flutter/ephemeral/
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ---------- Editors ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

@@ -1,0 +1,73 @@
+const ar = {
+  appTitle: "محلل المياه",
+  provideData: "قدم البيانات المطلوبة لرؤية النتائج",
+  showResults: "إظهار النتائج",
+  predicting: "جارٍ تحليل العينة…",
+  results: "النتائج",
+  recommendedDecision: "القرار الموصى به",
+  confidence: "درجة الثقة",
+  probabilities: "الاحتمالات",
+  modelInfo: "النموذج",
+  predictionFailed: "فشل التنبؤ",
+  language: "اللغة",
+  english: "English",
+  arabic: "العربية",
+
+  sectionInjection: "الحقن والمياه",
+  sectionFormation: "خصائص التكوين والموائع",
+  sectionChemistry: "كيمياء المياه",
+
+  fieldInjectionPressure: "ضغط الحقن (psi)",
+  fieldInjectionRate: "معدل الحقن (bbl/day)",
+  fieldMAIP: "MAIP (psi)",
+  fieldWaterRate: "معدل المياه (bbl/day)",
+  fieldWaterCut: "نسبة المياه (0-1)",
+
+  fieldLithology: "نوع الصخر",
+  fieldPorosity: "المسامية (0-1)",
+  fieldPermeability: "النفاذية (mD)",
+  fieldGRSS: "GRSS (0-100)",
+  fieldTemperature: "درجة الحرارة (°C)",
+
+  fieldTDS: "إجمالي المواد الذائبة (mg/L)",
+  fieldTSS: "إجمالي المواد العالقة (mg/L)",
+  fieldOil: "الزيت في المياه (ppm)",
+  fieldPH: "pH (0-14)",
+  fieldCa: "الكالسيوم (Ca) (mg/L)",
+  fieldSO4: "الكبريتات (SO₄) (mg/L)",
+  fieldBa: "الباريوم (Ba) (mg/L)",
+  fieldSr: "السترونشيوم (Sr) (mg/L)",
+  fieldCRI: "CRI",
+  fieldSRI: "SRI",
+
+  lithCarbonate: "كربوناتي",
+  lithSandstone: "حجر رملي",
+  lithShale: "صخر زيتي",
+
+  errEmpty: "لا يمكن أن يكون الحقل فارغاً",
+  errNonNumeric: "أدخل قيمة رقمية",
+  errNegative: "يجب أن تكون ≥ 0",
+  errRange: (lo, hi) => `يجب أن تكون بين ${lo} و ${hi}`,
+  errSelect: "يرجى اختيار قيمة",
+  errCannotReach: "تعذر الاتصال بالخادم. تأكد من تشغيل الـ API ومن إمكانية الوصول إليه.",
+
+  apiSettings: "رابط الخادم",
+  apiSettingsHint: "اضبط على http://<PC-IP>:8000 للاستخدام مع Expo Go على الهاتف.",
+
+  autoFill: "تعبئة تلقائية",
+  autoFillHint: "يملأ الحقول عشوائياً من عينة تمثيلية من مجموعة البيانات",
+
+  deeperAnalysis: "تحليل أعمق بالذكاء الاصطناعي",
+  deeperAnalysisHint: "إرسال المدخلات والنتيجة للذكاء الاصطناعي للحصول على تبرير أعمق بمستوى مهندس.",
+  aiAnalysis: "تحليل الذكاء الاصطناعي",
+  analyzing: "جاري التحليل…",
+  retry: "إعادة المحاولة",
+  aiErrorNetwork: "تعذّر الاتصال بخدمة الذكاء الاصطناعي. تحقّق من الشبكة وحاول مجدّداً.",
+  aiErrorTimeout: "استغرقت الخدمة وقتاً طويلاً. حاول مرة أخرى.",
+  aiErrorAuth: "خدمة الذكاء الاصطناعي غير مُعَدّة بشكل صحيح. تواصل مع المسؤول.",
+  aiErrorQuota: "انتهى رصيد خدمة الذكاء الاصطناعي أو تم تجاوز الحد المسموح. حاول لاحقاً.",
+  aiErrorNotConfigured: "تحليل الذكاء الاصطناعي غير مُفعّل على الخادم.",
+  aiErrorGeneric: "فشل تحليل الذكاء الاصطناعي. يرجى المحاولة مرة أخرى.",
+};
+
+export default ar;

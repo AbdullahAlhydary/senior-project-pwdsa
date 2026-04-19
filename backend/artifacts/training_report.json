@@ -1,0 +1,81 @@
+{
+  "model_name": "random_forest",
+  "cv_f1_macro_mean": 0.9804508909205287,
+  "cv_f1_macro_std": 0.0015910122800759476,
+  "test_accuracy": 0.9807692307692307,
+  "test_f1_macro": 0.9827572804640451,
+  "classes": [
+    "Disposal",
+    "Inject",
+    "Injection not suitable",
+    "Treat then inject"
+  ],
+  "confusion_matrix": [
+    [
+      724,
+      0,
+      2,
+      24
+    ],
+    [
+      0,
+      463,
+      0,
+      0
+    ],
+    [
+      12,
+      0,
+      719,
+      0
+    ],
+    [
+      22,
+      0,
+      0,
+      1154
+    ]
+  ],
+  "classification_report": {
+    "Disposal": {
+      "precision": 0.9551451187335093,
+      "recall": 0.9653333333333334,
+      "f1-score": 0.9602122015915119,
+      "support": 750.0
+    },
+    "Inject": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 463.0
+    },
+    "Injection not suitable": {
+      "precision": 0.9972260748959778,
+      "recall": 0.9835841313269493,
+      "f1-score": 0.990358126721763,
+      "support": 731.0
+    },
+    "Treat then inject": {
+      "precision": 0.9796264855687606,
+      "recall": 0.9812925170068028,
+      "f1-score": 0.9804587935429057,
+      "support": 1176.0
+    },
+    "accuracy": 0.9807692307692307,
+    "macro avg": {
+      "precision": 0.982999419799562,
+      "recall": 0.9825524954167713,
+      "f1-score": 0.9827572804640451,
+      "support": 3120.0
+    },
+    "weighted avg": {
+      "precision": 0.980888412444857,
+      "recall": 0.9807692307692307,
+      "f1-score": 0.9808110522543908,
+      "support": 3120.0
+    }
+  },
+  "n_train": 12480,
+  "n_test": 3120,
+  "training_seconds": 69.12055850028992
+}

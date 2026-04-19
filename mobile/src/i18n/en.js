@@ -1,0 +1,73 @@
+const en = {
+  appTitle: "Water Analyzer",
+  provideData: "Please provide the required data to view results",
+  showResults: "Show Results",
+  predicting: "Analyzing sample…",
+  results: "Results",
+  recommendedDecision: "Recommended Decision",
+  confidence: "Confidence",
+  probabilities: "Probabilities",
+  modelInfo: "Model",
+  predictionFailed: "Prediction failed",
+  language: "Language",
+  english: "English",
+  arabic: "العربية",
+
+  sectionInjection: "Injection & Water",
+  sectionFormation: "Formation & Fluid Properties",
+  sectionChemistry: "Water Chemistry",
+
+  fieldInjectionPressure: "Injection Pressure (psi)",
+  fieldInjectionRate: "Injection Rate (bbl/day)",
+  fieldMAIP: "MAIP (psi)",
+  fieldWaterRate: "Water Rate (bbl/day)",
+  fieldWaterCut: "Water Cut (0-1)",
+
+  fieldLithology: "Lithology",
+  fieldPorosity: "Porosity (0-1)",
+  fieldPermeability: "Permeability (mD)",
+  fieldGRSS: "GRSS (0-100)",
+  fieldTemperature: "Temperature (°C)",
+
+  fieldTDS: "TDS (mg/L)",
+  fieldTSS: "TSS (mg/L)",
+  fieldOil: "Oil in Water (ppm)",
+  fieldPH: "pH (0-14)",
+  fieldCa: "Calcium (Ca) (mg/L)",
+  fieldSO4: "Sulfate (SO₄) (mg/L)",
+  fieldBa: "Barium (Ba) (mg/L)",
+  fieldSr: "Strontium (Sr) (mg/L)",
+  fieldCRI: "CRI",
+  fieldSRI: "SRI",
+
+  lithCarbonate: "Carbonate",
+  lithSandstone: "Sandstone",
+  lithShale: "Shale",
+
+  errEmpty: "This field cannot be empty",
+  errNonNumeric: "Enter a numeric value",
+  errNegative: "Must be ≥ 0",
+  errRange: (lo, hi) => `Must be between ${lo} and ${hi}`,
+  errSelect: "Please select a value",
+  errCannotReach: "Could not reach the backend. Is the API running and reachable?",
+
+  apiSettings: "Backend URL",
+  apiSettingsHint: "Set this to http://<PC-IP>:8000 for Expo Go on phone.",
+
+  autoFill: "Auto-fill sample",
+  autoFillHint: "Randomly fills the form from a representative dataset sample",
+
+  deeperAnalysis: "Deeper AI Analysis",
+  deeperAnalysisHint: "Send inputs + result to the AI for a richer, engineer-level justification.",
+  aiAnalysis: "AI Analysis",
+  analyzing: "Thinking…",
+  retry: "Retry",
+  aiErrorNetwork: "Couldn't reach the AI service. Check your network and try again.",
+  aiErrorTimeout: "The AI service took too long to respond. Try again.",
+  aiErrorAuth: "The AI service is not configured correctly. Contact the maintainer.",
+  aiErrorQuota: "The AI service is out of credit or rate-limited. Try again later.",
+  aiErrorNotConfigured: "AI analysis is not enabled on the server.",
+  aiErrorGeneric: "AI analysis failed. Please try again.",
+};
+
+export default en;

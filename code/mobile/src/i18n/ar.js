@@ -40,7 +40,7 @@ const ar = {
   fieldCRI: "CRI",
   fieldSRI: "SRI",
 
-  lithCarbonate: "كربوناتي",
+  lithCarbonate: "كربونات",
   lithSandstone: "حجر رملي",
   lithShale: "صخر زيتي",
 

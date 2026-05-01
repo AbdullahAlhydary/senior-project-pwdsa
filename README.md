@@ -1,6 +1,6 @@
 # PWDSA — Produced Water Decision-Support Application
 
-Senior Project, KFUPM · Term 251 · Team M084
+Senior Project, KFUPM · Term 251-252 · Team M084
 (PETE · CHE · GEO · SWE).
 
 Given a produced-water sample, the system recommends one of four actions:

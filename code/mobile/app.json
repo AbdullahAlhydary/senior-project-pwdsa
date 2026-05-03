@@ -21,7 +21,9 @@
     "android": {
       "package": "com.abdullahalhydary.pwdsa",
       "versionCode": 1,
-      "permissions": ["INTERNET"],
+      "permissions": [
+        "INTERNET"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#050F2C"
@@ -33,8 +35,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": ""
+        "projectId": "aa81a4c9-0fd6-4980-a74a-b32c1f9cace5"
       }
-    }
+    },
+    "owner": "abdullahalhydary"
   }
 }

@@ -18,7 +18,7 @@
 # Privacy Policy — PWDSA Water Analyzer
 
 **Last updated:** 2026-05-03
-**Contact:** abdullah.alhydary@example.com  <!-- replace with a real reachable email -->
+**Contact:** abdullah.kh1600@gmail.com  <!-- replace with a real reachable email -->
 
 ## 1. Who we are
 

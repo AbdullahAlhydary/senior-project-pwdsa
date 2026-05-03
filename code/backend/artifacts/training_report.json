@@ -1,9 +1,9 @@
 {
-  "model_name": "random_forest",
-  "cv_f1_macro_mean": 0.9804508909205287,
-  "cv_f1_macro_std": 0.0015910122800759476,
-  "test_accuracy": 0.9807692307692307,
-  "test_f1_macro": 0.9827572804640451,
+  "model_name": "lightgbm",
+  "cv_f1_macro_mean": 0.9864648430294805,
+  "cv_f1_macro_std": 0.00228527693090954,
+  "test_accuracy": 0.9846153846153847,
+  "test_f1_macro": 0.9855046405605576,
   "classes": [
     "Disposal",
     "Inject",
@@ -12,10 +12,10 @@
   ],
   "confusion_matrix": [
     [
-      724,
+      727,
       0,
-      2,
-      24
+      5,
+      18
     ],
     [
       0,
@@ -24,58 +24,79 @@
       0
     ],
     [
-      12,
+      10,
       0,
-      719,
+      721,
       0
     ],
     [
-      22,
+      11,
+      4,
       0,
-      0,
-      1154
+      1161
     ]
   ],
   "classification_report": {
     "Disposal": {
-      "precision": 0.9551451187335093,
-      "recall": 0.9653333333333334,
-      "f1-score": 0.9602122015915119,
+      "precision": 0.9719251336898396,
+      "recall": 0.9693333333333334,
+      "f1-score": 0.9706275033377837,
       "support": 750.0
     },
     "Inject": {
-      "precision": 1.0,
+      "precision": 0.9914346895074947,
       "recall": 1.0,
-      "f1-score": 1.0,
+      "f1-score": 0.9956989247311828,
       "support": 463.0
     },
     "Injection not suitable": {
-      "precision": 0.9972260748959778,
-      "recall": 0.9835841313269493,
-      "f1-score": 0.990358126721763,
+      "precision": 0.9931129476584022,
+      "recall": 0.9863201094391245,
+      "f1-score": 0.9897048730267674,
       "support": 731.0
     },
     "Treat then inject": {
-      "precision": 0.9796264855687606,
-      "recall": 0.9812925170068028,
-      "f1-score": 0.9804587935429057,
+      "precision": 0.9847328244274809,
+      "recall": 0.9872448979591837,
+      "f1-score": 0.9859872611464968,
       "support": 1176.0
     },
-    "accuracy": 0.9807692307692307,
+    "accuracy": 0.9846153846153847,
     "macro avg": {
-      "precision": 0.982999419799562,
-      "recall": 0.9825524954167713,
-      "f1-score": 0.9827572804640451,
+      "precision": 0.9853013988208044,
+      "recall": 0.9857245851829104,
+      "f1-score": 0.9855046405605576,
       "support": 3120.0
     },
     "weighted avg": {
-      "precision": 0.980888412444857,
-      "recall": 0.9807692307692307,
-      "f1-score": 0.9808110522543908,
+      "precision": 0.9846120121071664,
+      "recall": 0.9846153846153847,
+      "f1-score": 0.9846072150463855,
       "support": 3120.0
     }
   },
   "n_train": 12480,
   "n_test": 3120,
-  "training_seconds": 69.12055850028992
+  "training_seconds": 76.63794708251953,
+  "feature_order": [
+    "water_cut_fraction",
+    "reservoir_pressure_psi",
+    "MAIP_psi",
+    "required_injection_pressure_psi",
+    "porosity_fraction",
+    "permeability_md",
+    "TDS_mg_L",
+    "oil_in_water_ppm",
+    "TSS_mg_L",
+    "Ca_mg_L",
+    "SO4_mg_L",
+    "Ba_mg_L",
+    "Sr_mg_L",
+    "CRI",
+    "SRI",
+    "pH",
+    "temperature_C",
+    "GRSS",
+    "lithology"
+  ]
 }

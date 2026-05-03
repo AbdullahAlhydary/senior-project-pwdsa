@@ -1,0 +1,61 @@
+# Render.com deployment blueprint for the PWDSA backend.
+#
+# How Render uses this file:
+#   1. You log into Render → "New +" → "Blueprint" → pick this GitHub repo.
+#   2. Render reads `render.yaml`, sees one web service, and provisions it.
+#   3. On every push to `main`, Render auto-runs `buildCommand`, then
+#      restarts the service with `startCommand`.
+#
+# Why each line is the way it is:
+#
+#   * region: frankfurt
+#       Closest Render region to Saudi Arabia (~150 ms RTT). The other
+#       options are Oregon, Ohio, Virginia, and Singapore — all worse for
+#       Middle-East users.
+#
+#   * plan: starter ($7/month)
+#       The "free" plan sleeps after 15 min of inactivity, causing a
+#       30-60-second cold start on the first request. Starter stays awake
+#       24/7 — required for a presentation/demo experience.
+#
+#   * rootDir: code/backend
+#       Render runs all commands from this subfolder. Lets us keep
+#       backend + mobile in one monorepo without confusing the build.
+#
+#   * startCommand uses gunicorn with 2 uvicorn workers:
+#       - 2 workers means a long LLM call doesn't block other requests.
+#       - Each worker loads the joblib model into memory once at boot.
+#       - --timeout 60 lets the LLM call finish before Render kills it.
+#
+#   * healthCheckPath: /api/v1/health
+#       Render hits this every minute. If it 5xx's three times in a row,
+#       Render auto-restarts the container.
+#
+#   * envVars:
+#       - OPENAI_API_KEY: `sync: false` means "don't put the value here;
+#         I'll paste it manually in the Render dashboard". This is how
+#         the secret stays out of git.
+#       - OPENAI_MODEL: safe to commit (just a model ID, not a secret).
+#       - PYTHON_VERSION: matches .python-version so Render builds with
+#         the same interpreter we developed against.
+
+services:
+  - type: web
+    name: pwdsa-api
+    runtime: python
+    region: frankfurt
+    plan: starter
+    rootDir: code/backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: gunicorn app.main:app -k uvicorn.workers.UvicornWorker --workers 2 --bind 0.0.0.0:$PORT --timeout 60 --access-logfile -
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.4-mini
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: PWDSA_MODEL_PATH
+        value: /opt/render/project/src/code/backend/artifacts/model.joblib

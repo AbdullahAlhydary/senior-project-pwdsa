@@ -1,0 +1,52 @@
+{
+  "_comment": "EAS Build + EAS Submit configuration. EAS reads this file when you run `eas build` and `eas submit`. Three profiles are defined: 'development' for an Expo Dev Client build with full logs, 'preview' for an installable APK you can sideload onto a phone for QA, and 'production' for the AAB (Android App Bundle) you upload to Google Play Store. The EXPO_PUBLIC_API_URL env var is baked into the JavaScript bundle at build time — change it to your real Render URL before building. The OpenAI key is NOT here on purpose: the mobile app never holds it; it only knows the backend URL, and the backend talks to OpenAI on its behalf.",
+
+  "cli": {
+    "version": ">= 12.0.0",
+    "appVersionSource": "remote"
+  },
+
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://pwdsa-api.onrender.com"
+      }
+    },
+
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://pwdsa-api.onrender.com"
+      }
+    },
+
+    "production": {
+      "android": {
+        "buildType": "app-bundle",
+        "autoIncrement": "versionCode"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://pwdsa-api.onrender.com"
+      }
+    }
+  },
+
+  "submit": {
+    "production": {
+      "android": {
+        "_comment_serviceAccountKeyPath": "Path (relative to code/mobile/) to the JSON service-account file you download from Google Play Console. Required only if you want `eas submit` to upload the AAB for you automatically — uploading the AAB manually through the Play Console UI works just as well.",
+        "serviceAccountKeyPath": "./play-service-account.json",
+        "track": "production",
+        "releaseStatus": "draft"
+      }
+    }
+  }
+}

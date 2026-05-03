@@ -1,15 +1,20 @@
-"""Plain-language summary generator (Specification 3 / Integrated Spec 1).
+"""Plain-language summary generator.
 
 Produces a 1-2 sentence explanation in English or Arabic based on the
-predicted decision class and the driving input values. Deterministic,
-rule-based — no external LLM — so it runs fully offline alongside the
-classifier.
+predicted decision class and the driving input values. Deterministic and
+rule-based — no external LLM — so it always runs offline alongside the
+classifier (Specification 3 / Integrated Spec 1).
+
+Workflow position:
+    /predict route -->  Predictor.predict()  -->  build_summary()  -->  response
 """
 from __future__ import annotations
 
 from typing import Any
 
+# A short type alias keeps the public API readable.
 Lang = str  # "en" | "ar"
+
 
 _EN_TEMPLATES: dict[str, str] = {
     "Inject": (
@@ -61,6 +66,7 @@ _AR_TEMPLATES: dict[str, str] = {
 
 
 def build_summary(decision: str, features: dict[str, Any], lang: Lang = "en") -> str:
+    """Return a localized 1-2 sentence verdict for `decision`."""
     templates = _AR_TEMPLATES if lang == "ar" else _EN_TEMPLATES
     tmpl = templates.get(decision)
     if tmpl is None:
@@ -69,6 +75,7 @@ def build_summary(decision: str, features: dict[str, Any], lang: Lang = "en") ->
             if lang == "en"
             else f"القرار الموصى به: {decision}."
         )
+    # Substitute None with 0 so `.format` never crashes on optional inputs.
     safe: dict[str, Any] = {k: (v if v is not None else 0) for k, v in features.items()}
     try:
         return tmpl.format(**safe)

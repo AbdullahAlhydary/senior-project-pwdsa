@@ -1,11 +1,27 @@
+// Pill-style segmented selector used for the lithology field.
+//
+// Visually similar to iOS's "segmented control"; built with simple Pressables
+// to avoid a third-party dep.
+
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import InfoTooltip from "./InfoTooltip";
 import { useTheme } from "../theme";
 
-export default function SegmentedSelect({ label, value, onChange, options, error }) {
+export default function SegmentedSelect({
+  label,
+  value,
+  onChange,
+  options,
+  error,
+  tooltip,
+}) {
   const { colors } = useTheme();
   return (
     <View style={styles.wrap}>
-      <Text style={[styles.label, { color: colors.textMuted }]}>{label}</Text>
+      <View style={styles.labelRow}>
+        <Text style={[styles.label, { color: colors.textMuted }]}>{label}</Text>
+        {tooltip ? <InfoTooltip title={label} body={tooltip} /> : null}
+      </View>
       <View
         style={[
           styles.row,
@@ -48,8 +64,9 @@ export default function SegmentedSelect({ label, value, onChange, options, error
 }
 
 const styles = StyleSheet.create({
-  wrap: { marginBottom: 12 },
-  label: { fontSize: 13, marginBottom: 6 },
+  wrap: { marginBottom: 14 },
+  labelRow: { flexDirection: "row", alignItems: "center", marginBottom: 6 },
+  label: { fontSize: 13, flexShrink: 1 },
   row: {
     flexDirection: "row",
     borderRadius: 14,

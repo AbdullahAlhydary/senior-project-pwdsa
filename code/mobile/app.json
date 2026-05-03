@@ -1,29 +1,40 @@
 {
   "expo": {
-    "name": "PWDSA",
+    "name": "PWDSA Water Analyzer",
     "slug": "pwdsa",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
+    "scheme": "pwdsa",
+    "primaryColor": "#1E3C72",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#050F2C"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.abdullahalhydary.pwdsa"
     },
     "android": {
+      "package": "com.abdullahalhydary.pwdsa",
+      "versionCode": 1,
+      "permissions": ["INTERNET"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#050F2C"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
     }
   }
 }

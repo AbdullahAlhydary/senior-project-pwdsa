@@ -41,3 +41,10 @@ ehthumbs.db
 *.swp
 *.swo
 *~
+
+# ---------- Deployment secrets ----------
+# Google Play service-account key (used by `eas submit`).
+**/play-service-account.json
+# Local Expo / EAS auth caches.
+**/.eas/
+**/.expo-cache/

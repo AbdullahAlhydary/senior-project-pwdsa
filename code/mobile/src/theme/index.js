@@ -1,3 +1,8 @@
+// App-wide theming — dark + light palettes plus a context that swaps them.
+//
+// The `useTheme` hook returns `{ mode, colors, toggle }`. Components import
+// `colors` rather than hard-coding hex values so themes stay consistent.
+
 import { createContext, useContext, useMemo, useState } from "react";
 
 const dark = {
@@ -21,6 +26,10 @@ const dark = {
   pillActive: "#1E3C72",
   pillActiveText: "#FFFFFF",
   shadow: "#000",
+  // Severity tones used by AlertsCard.
+  alertSuccess: "#34D399",
+  alertWarning: "#FBBF24",
+  alertDanger: "#F87171",
 };
 
 const light = {
@@ -44,6 +53,10 @@ const light = {
   pillActive: "#1E3C72",
   pillActiveText: "#FFFFFF",
   shadow: "#000",
+  // Severity tones used by AlertsCard.
+  alertSuccess: "#16A34A",
+  alertWarning: "#D97706",
+  alertDanger: "#DC2626",
 };
 
 const THEMES = { dark, light };

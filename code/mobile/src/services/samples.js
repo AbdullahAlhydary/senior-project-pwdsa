@@ -1,35 +1,39 @@
-/**
- * Representative samples drawn from datasetSP_CSV.csv — stratified across all
- * four `recommended_decision` classes and all three lithologies so the
- * auto-fill button exercises the full decision space.
- */
+// Representative samples drawn from `data/dataset.csv` — stratified across
+// all four `recommended_decision` classes and all three lithologies so the
+// auto-fill button exercises the full decision space.
+//
+// Each sample now also carries the `reservoirPressure` and an
+// `injectionRate` so the new alerts and visualization controls have
+// realistic defaults.
 const SAMPLES = [
-  // Disposal — carbonate
-  { injectionPressure: 5427, injectionRate: 2432.5, maip: 7122, waterRate: 2619, waterCut: 0.773, lithology: "carbonate", porosity: 0.309, permeability: 201, grss: 64.76, temperature: 74.1, tds: 2289, tss: 116.3, oil: 36.09, ph: 7.98, ca: 1151, so4: 223, ba: 0, sr: 132 },
-  // Disposal — sandstone
-  { injectionPressure: 5679, injectionRate: 2125, maip: 7126, waterRate: 2250, waterCut: 0.65, lithology: "sandstone", porosity: 0.292, permeability: 730, grss: 66.59, temperature: 52.24, tds: 1698, tss: 199.36, oil: 31.21, ph: 9.59, ca: 1417, so4: 160, ba: 0, sr: 89 },
-  // Disposal — shale
-  { injectionPressure: 4909, injectionRate: 2567.5, maip: 7476, waterRate: 2781, waterCut: 0.827, lithology: "shale", porosity: 0.282, permeability: 712, grss: 62.29, temperature: 33.22, tds: 2472, tss: 191.27, oil: 9.85, ph: 8.01, ca: 1488, so4: 224, ba: 0, sr: 93 },
-  // Inject — carbonate
-  { injectionPressure: 4403, injectionRate: 1250, maip: 6800, waterRate: 1200, waterCut: 0.3, lithology: "carbonate", porosity: 0.268, permeability: 599, grss: 84.15, temperature: 45.39, tds: 3035, tss: 49.06, oil: 8.55, ph: 7.94, ca: 1163, so4: 151, ba: 0, sr: 103 },
-  // Inject — sandstone
-  { injectionPressure: 4718, injectionRate: 2115, maip: 7569, waterRate: 2238, waterCut: 0.646, lithology: "sandstone", porosity: 0.298, permeability: 755, grss: 88.53, temperature: 45.06, tds: 3722, tss: 36.52, oil: 7.78, ph: 7.94, ca: 1110, so4: 259, ba: 0, sr: 87 },
-  // Injection not suitable — carbonate
-  { injectionPressure: 8790, injectionRate: 2422.5, maip: 7590, waterRate: 2607, waterCut: 0.769, lithology: "carbonate", porosity: 0.275, permeability: 749, grss: 35.3, temperature: 62.65, tds: 3280, tss: 259.23, oil: 8.36, ph: 7.88, ca: 1932, so4: 228, ba: 0, sr: 144 },
-  // Injection not suitable — sandstone
-  { injectionPressure: 7054, injectionRate: 2442.5, maip: 6854, waterRate: 2631, waterCut: 0.777, lithology: "sandstone", porosity: 0.269, permeability: 716, grss: 59.74, temperature: 42.56, tds: 1290, tss: 144.66, oil: 6.84, ph: 7.45, ca: 1448, so4: 274, ba: 0, sr: 157 },
-  // Injection not suitable — shale
-  { injectionPressure: 5062, injectionRate: 2412.5, maip: 7388, waterRate: 2595, waterCut: 0.765, lithology: "shale", porosity: 0.248, permeability: 520, grss: 49.44, temperature: 35.92, tds: 1571, tss: 100.79, oil: 9.33, ph: 8.07, ca: 835, so4: 185, ba: 0, sr: 84 },
   // Treat then inject — carbonate
-  { injectionPressure: 3698, injectionRate: 1560, maip: 7104, waterRate: 1572, waterCut: 0.424, lithology: "carbonate", porosity: 0.286, permeability: 631, grss: 78.61, temperature: 51.85, tds: 2747, tss: 51.29, oil: 8.74, ph: 7.97, ca: 1902, so4: 40, ba: 0, sr: 164 },
+  { injectionPressure: 4461, injectionRate: 1820, reservoirPressure: 3932, maip: 7113, waterRate: 1620, waterCut: 0.583, lithology: "carbonate", porosity: 0.279, permeability: 610, grss: 72.82, temperature: 40.44, tds: 2607, tss: 67.03, oil: 7.06, ph: 7.97, ca: 999, so4: 245, ba: 0, sr: 162 },
   // Treat then inject — sandstone
-  { injectionPressure: 4494, injectionRate: 1725, maip: 7314, waterRate: 1770, waterCut: 0.49, lithology: "sandstone", porosity: 0.264, permeability: 649, grss: 75.61, temperature: 50.02, tds: 1118, tss: 20.9, oil: 8.85, ph: 7.73, ca: 1518, so4: 99, ba: 0, sr: 104 },
+  { injectionPressure: 4141, injectionRate: 1860, reservoirPressure: 4091, maip: 7172, waterRate: 1700, waterCut: 0.525, lithology: "sandstone", porosity: 0.291, permeability: 792, grss: 77.75, temperature: 47.27, tds: 2430, tss: 97.9, oil: 6.05, ph: 7.9, ca: 1113, so4: 236, ba: 0, sr: 146 },
   // Treat then inject — shale
-  { injectionPressure: 4334, injectionRate: 1872.5, maip: 7488, waterRate: 1947, waterCut: 0.549, lithology: "shale", porosity: 0.28, permeability: 212, grss: 73.26, temperature: 37.31, tds: 2146, tss: 163.71, oil: 24.54, ph: 8.25, ca: 1268, so4: 187, ba: 0, sr: 115 },
+  { injectionPressure: 4422, injectionRate: 1645, reservoirPressure: 4372, maip: 6937, waterRate: 1480, waterCut: 0.413, lithology: "shale", porosity: 0.287, permeability: 225, grss: 75.7, temperature: 50.39, tds: 3478, tss: 33.52, oil: 12.54, ph: 7.9, ca: 1220, so4: 195, ba: 0, sr: 98 },
+  // Inject — carbonate
+  { injectionPressure: 4370, injectionRate: 1280, reservoirPressure: 4320, maip: 7780, waterRate: 1180, waterCut: 0.514, lithology: "carbonate", porosity: 0.28, permeability: 723, grss: 84.42, temperature: 32.72, tds: 1623, tss: 102.68, oil: 8.31, ph: 8.08, ca: 1308, so4: 119, ba: 0, sr: 154 },
+  // Inject — sandstone
+  { injectionPressure: 4710, injectionRate: 2160, reservoirPressure: 4351, maip: 7080, waterRate: 1980, waterCut: 0.663, lithology: "sandstone", porosity: 0.276, permeability: 596, grss: 95.0, temperature: 55.33, tds: 3179, tss: 31.48, oil: 7.12, ph: 8.2, ca: 996, so4: 195, ba: 0, sr: 119 },
+  // Injection not suitable — carbonate
+  { injectionPressure: 7275, injectionRate: 2310, reservoirPressure: 3033, maip: 7075, waterRate: 2100, waterCut: 0.735, lithology: "carbonate", porosity: 0.277, permeability: 645, grss: 59.73, temperature: 38.0, tds: 246, tss: 119.36, oil: 11.29, ph: 8.23, ca: 1477, so4: 345, ba: 0, sr: 103 },
+  // Injection not suitable — sandstone
+  { injectionPressure: 8463, injectionRate: 2480, reservoirPressure: 3097, maip: 7263, waterRate: 2200, waterCut: 0.789, lithology: "sandstone", porosity: 0.274, permeability: 660, grss: 34.42, temperature: 46.28, tds: 2844, tss: 336.45, oil: 24.3, ph: 8.0, ca: 1114, so4: 325, ba: 0, sr: 158 },
+  // Injection not suitable — shale
+  { injectionPressure: 4147, injectionRate: 1950, reservoirPressure: 3839, maip: 7312, waterRate: 1820, waterCut: 0.647, lithology: "shale", porosity: 0.265, permeability: 492, grss: 32.0, temperature: 53.12, tds: 4164, tss: 105.79, oil: 9.38, ph: 8.18, ca: 973, so4: 204, ba: 0, sr: 169 },
+  // Disposal — carbonate
+  { injectionPressure: 6007, injectionRate: 2380, reservoirPressure: 3145, maip: 6890, waterRate: 2150, waterCut: 0.77, lithology: "carbonate", porosity: 0.273, permeability: 516, grss: 73.26, temperature: 51.1, tds: 2421, tss: 90.6, oil: 22.79, ph: 7.92, ca: 1412, so4: 152, ba: 0, sr: 149 },
+  // Disposal — sandstone
+  { injectionPressure: 5503, injectionRate: 2410, reservoirPressure: 3212, maip: 7161, waterRate: 2200, waterCut: 0.772, lithology: "sandstone", porosity: 0.291, permeability: 883, grss: 73.58, temperature: 35.75, tds: 1477, tss: 172.09, oil: 10.9, ph: 7.89, ca: 1679, so4: 263, ba: 0, sr: 96 },
+  // Disposal — shale
+  { injectionPressure: 5079, injectionRate: 2360, reservoirPressure: 3221, maip: 7210, waterRate: 2150, waterCut: 0.743, lithology: "shale", porosity: 0.261, permeability: 614, grss: 69.18, temperature: 33.04, tds: 3034, tss: 37.47, oil: 11.61, ph: 8.2, ca: 1332, so4: 136, ba: 0, sr: 117 },
 ];
 
+// All numeric form keys (lithology is handled separately because it's a
+// pill-segmented selector, not a TextInput).
 const KEYS = [
-  "injectionPressure", "injectionRate", "maip", "waterRate", "waterCut",
+  "injectionPressure", "injectionRate", "reservoirPressure", "maip", "waterRate", "waterCut",
   "porosity", "permeability", "grss", "temperature",
   "tds", "tss", "oil", "ph", "ca", "so4", "ba", "sr",
 ];

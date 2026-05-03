@@ -48,3 +48,10 @@ ehthumbs.db
 # Local Expo / EAS auth caches.
 **/.eas/
 **/.expo-cache/
+
+# ---------- Proprietary / private files ----------
+# Training dataset — keep out of the public repo.
+data/
+
+# Claude Code internal state (worktrees, sessions, caches).
+.claude/

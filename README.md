@@ -12,6 +12,9 @@ adds an engineer-grade justification on demand; and a 2D interactive
 simulation lets users explore how the well behaves between safe operation
 and reservoir fracturing.
 
+For direct installation of the Android app, use the secure link below. The official release on the Google Play Store will be available soon:
+https://expo.dev/accounts/abdullahalhydary/projects/pwdsa/builds/ceb49c7e-96d6-449f-ba0c-37368f9196ed
+
 ---
 
 ## Repository layout
